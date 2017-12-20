@@ -1,0 +1,27 @@
+{
+  "name": "electron-hw",
+  "version": "1.0.0",
+  "description": "helloworld",
+  "main": "src/js/root.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/michaelrodov/electron-hw.git"
+  },
+  "author": "rodov",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/michaelrodov/electron-hw/issues"
+  },
+  "homepage": "https://github.com/michaelrodov/electron-hw#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "electron-positioner": "^3.0.0",
+    "node-notifier": "^5.1.2"
+  },
+  "devDependencies": {
+    "electron": "^1.7.10"
+  }
+}

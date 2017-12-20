@@ -1,0 +1,70 @@
+.container--main {
+    width: 100%;
+    background-color: lightgray;
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.location {
+    background-color: #f9f9f9;
+    border: solid 1px white;
+    border-radius: 5px;
+    display: grid;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+    padding-top: 15px;
+}
+.location:hover {
+    background-color: rgb(233, 255, 233);
+}
+.location.selected .title {
+    background-color: #a6f182;
+}
+.location .title {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    padding: 3px;
+    border: solid 1px #4d4d4d;
+    background-color: #ebeef1;
+    color: #4d4d4d;
+    border-radius: 5px;
+
+}
+.booth {
+    min-height: 80px;
+    min-width: 80px;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-right: 3px;
+}
+.booth-free {
+    background-color: lightgreen;
+}
+
+.booth-busy {
+    background-color: #ff7780;
+}
+
+.toilet{
+    border-radius: 15px 0 0 15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    align-self: flex-end;
+    border: solid 1px #acacac;
+    text-align: center;
+    line-height: 40px;
+}
+
+.toilet.rotate-90 {
+    transform: rotate(-90deg);
+    align-self: center;
+    position: absolute;
+    top: 3px;
+}
