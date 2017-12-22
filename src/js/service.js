@@ -47,24 +47,27 @@ let render = {
     updateView: function (stateObject) {
         if (stateObject) {
 
+            //update classes
             stateObject.forEach(function (el) {
                 let boothDom = document.getElementById(el.location + "." + el.id);
                 boothDom && boothDom.classList.remove("booth-busy","booth-free");
                 boothDom && boothDom.classList.add(el.status === "Closed" ? "booth-busy" : "booth-free");
             });
 
+            //update whole location state
             let locationBusy = stateObject
               .filter(function(el) {
                 return (state.locationForUpdates.length > 0) ? el.location === state.locationForUpdates : true;
             }).map(function (el) {
                 return el.status === "Closed"
             }).reduce(function(accum, val) {
-                return accum & val;
-            });
+                return accum && val;
+            }, state.locationBusy);
 
             if(locationBusy !== state.locationBusy){
                 state.locationBusy = locationBusy;
                 let stateString = (locationBusy) ? "Busy" : "Available";
+
                 notifier.notify({
                     'title': stateString + ' bathroom',
                     'message': 'Bathroom at '+ state.locationForUpdates +' just become '+stateString.toLowerCase()+'!',
